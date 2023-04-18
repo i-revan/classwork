@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "41LY2dewXxWBO3ASpy+rfcLhH6gQTDEJLqxJgXYhaWPvwKwMmM6qZ/LcP6cpxa2g4bTOQcGR2agN0614/2uIWw==",
+  "dgSpecHash": "vr+C+IJriYy32m+3DY5CZ/5Z6JV6RiCpSN2uyQyIVKXIYiiEZvVvue1/XOf8NjylXHatEzeyqKDq6C8uzXUSxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ClassTime\\Desktop\\NS\\Algorithm\\ConsoleApp16\\ConsoleApp16.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ClassTime\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\ClassTime\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\ClassTime\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\ClassTime\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Revan\\Desktop\\classwork\\ConsoleApp16.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

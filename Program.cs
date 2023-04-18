@@ -43,57 +43,100 @@ namespace ConsoleApp16
                                 Context.Categories.Add(category);
                                 break;
                             case 2:
+                                if(Context.Categories.Count > 0)
+                                {
                                 Console.Write("Category Idsini daxil edin: ");
                                 int categoryid = int.Parse(Console.ReadLine());
                                 Category.Delete(categoryid);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Silinecek category yoxdur!");
+                                }
                                 break;
                             case 3:
-                                Console.Write("Category Idsini daxil edin: ");
-                                int updatedCategoryid = int.Parse(Console.ReadLine());
-                                Category.Update(updatedCategoryid);
+                                if (Context.Categories.Count > 0)
+                                {
+                                    Console.Write("Category Idsini daxil edin: ");
+                                    int updatedCategoryid = int.Parse(Console.ReadLine());
+                                    Category.Update(updatedCategoryid);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Deyisiklik etmek ucun category yoxdur!");
+                                }
+                                
                                 break;
                         }
                         break;
                     case 2:
-                        Console.WriteLine("1.Create");
-                        Console.WriteLine("2.Delete");
-                        Console.WriteLine("3.Update");
-                        Console.WriteLine("0.Exit");
-                        Console.Write("Seciminizi edin: ");
-                        int input3 = int.Parse(Console.ReadLine());
-                        switch (input3)
+                        if (Context.Categories.Count == 0)
                         {
-                            case 0:
-                                break;
-                            case 1:
-                                Console.Write("Medicine adini daxil edin: ");
-                                string medicineName = Console.ReadLine();
-                                Console.Write("Medicine adini daxil edin: ");
-                                double medicineCost = Convert.ToDouble(Console.ReadLine());
-                                Console.Write("Medicine adini daxil edin: ");
-                                int medicineCount = int.Parse(Console.ReadLine());
-                                Medicine medicine = new Medicine(medicineName,medicineCost,medicineCount);
-                                Context.Medicines.Add(medicine);
-                                break;
-                            case 2:
-                                Console.Write("Category Idsini daxil edin: ");
-                                int categoryid = int.Parse(Console.ReadLine());
-                                Category.Delete(categoryid);
-                                break;
-                            case 3:
-                                Console.Write("Category Idsini daxil edin: ");
-                                int updatedCategoryid = int.Parse(Console.ReadLine());
-                                Category.Update(updatedCategoryid);
-                                break;
+                            Console.WriteLine("Category yaradilmadan derman yardila bilmez!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("1.Create Medicine");
+                            Console.WriteLine("2.Delete Medicine");
+                            Console.WriteLine("3.Update Medicine");
+                            Console.WriteLine("4.Sale Medicine");
+                            Console.WriteLine("0.Exit");
+                            Console.Write("Seciminizi edin: ");
+                            int input3 = int.Parse(Console.ReadLine());
+                            switch (input3)
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                    Medicine.Create();
+                                    break;
+                                case 2:
+                                    if(Context.Medicines.Count > 0)
+                                    {
+                                        Console.Write("Medicine Idsini daxil edin: ");
+                                        int medicineId = int.Parse(Console.ReadLine());
+                                        Category.Delete(medicineId);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Silinecek derman yoxdur!");
+                                    }
+                                    break;
+                                case 3:
+                                    if (Context.Medicines.Count > 0)
+                                    {
+                                        Console.Write("Deyisiklik edeceyiniz dermanin Idsini daxil edin: ");
+                                        int updatedMedicineId = int.Parse(Console.ReadLine());
+                                        Medicine.Update(updatedMedicineId);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Deyisiklik edilecek derman yoxdur!");
+                                    }
+                                    
+                                    break;
+                                case 4:
+                                    if (Context.Medicines.Count > 0)
+                                    {
+                                        foreach (var item in Context.Medicines)
+                                        {
+                                            Console.WriteLine($"{item.Name} id: {item.Id} sayi: {item.Count}");
+                                        }
+                                        Console.Write("Satilan dermanin idsini daxil edin: ");
+                                        int saledId = int.Parse(Console.ReadLine());
+                                        Medicine.Sale(saledId);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Satis ucun kifayet qeder derman yoxdur");
+                                    }
+                                   
+                                    break;
+                            }
                         }
                         break;
                 }
-
             } while (input != 0);
-            foreach (var item in Context.Categories)
-            {
-                Console.WriteLine(item.CategoryName);
-            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace ConsoleApp16.Models
         public static int _id;
         public int Id { get; set; }
         public string CategoryName { get; set; }
+        public List<Medicine> CategorizedMedicines = new List<Medicine>();
         public Category(string categoryName)
         {
             _id++;
